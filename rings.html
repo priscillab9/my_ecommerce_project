@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rings - Glitterbug Jewelry</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #fff8f8; padding: 20px; }
+    header { text-align: center; margin-bottom: 30px; }
+    .gallery { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+    .gallery .item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+    }
+    .gallery img { width: 200px; height: 200px; object-fit: cover; }
+    button {
+      background-color: #ff85b3;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Glitterbug Jewelry - Rings</h1>
+</header>
+
+<section>
+  <h2>Our Rings Collection</h2>
+  <div class="gallery">
+
+    <div class="item">
+      <img src="https://kadavilgold.com/wp-content/uploads/2024/09/1673962109_d237e9feb935a9f44303.jpg" alt="Ring1">
+      <p>Bohoomoon Diamond Ring</p>
+      <p>Price: $120</p>
+      <button onclick="addToCart('ring1', 'Bohoomoon Diamond Ring', 120)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="https://i0.wp.com/www.weddingforward.com/wp-content/uploads/2021/01/round-engagement-rings-diamond-rings-melaniecaseyjewelry2-1.jpg?fit=1080%2C1350&quality=70&ssl=1" alt="Ring2">
+      <p>Round Engagement Ring</p>
+      <p>Price: $150</p>
+      <button onclick="addToCart('ring2', 'Round Engagement Ring', 150)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="https://i00.eu/img/413/1024x1024/abg1au7d/58684.jpg" alt="Ring3">
+      <p>Pearl Chain Ring</p>
+      <p>Price: $90</p>
+      <button onclick="addToCart('ring3', 'Pearl Chain Ring', 90)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="https://www.zivar.in/cdn/shop/products/aasi-diamond-ring-433638.jpg?v=1691477702" alt="Ring4">
+      <p>Josallukas Diamond Ring</p>
+      <p>Price: $170</p>
+      <button onclick="addToCart('ring4', 'Josallukas Diamond Ring', 170)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="https://www.shopfusio.com/cdn/shop/products/DoublePearlRing_1.jpg?v=1617606701" alt="Ring5">
+      <p>Double Pearl Ring</p>
+      <p>Price: $100</p>
+      <button onclick="addToCart('ring5', 'Double Pearl Ring', 100)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="https://www.giva.co/cdn/shop/files/preview_images/6ca87520c08940739c2495573db80bd5.thumbnail.0000000000.jpg?v=1696941671&width=1946" alt="Ring6">
+      <p>Golden Glow Ring</p>
+      <p>Price: $110</p>
+      <button onclick="addToCart('ring6', 'Golden Glow Ring', 110)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="https://images.squarespace-cdn.com/content/v1/5e191ad80896682b6acb0abb/9dd2b6d4-358a-4acd-afc2-55208c1ad61a/20240815_103245.jpg?format=1000w" alt="Ring7">
+      <p>Modern Gemstone Ring</p>
+      <p>Price: $140</p>
+      <button onclick="addToCart('ring7', 'Modern Gemstone Ring', 140)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="https://i.etsystatic.com/13586898/r/il/9f833d/1921212396/il_fullxfull.1921212396_5okb.jpg" alt="Ring8">
+      <p>Rose Crown Ring</p>
+      <p>Price: $130</p>
+      <button onclick="addToCart('ring8', 'Rose Crown Ring', 130)">Add to Cart</button>
+    </div>
+
+  </div>
+
+  <br>
+  <div style="text-align:center;">
+    <a href="buy.html"><button>Go to Cart & Checkout</button></a>
+  </div>
+</section>
+
+<script>
+  function addToCart(id, name, price) {
+    const product = { id, name, price };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existing = cart.find(item => item.id === id);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      product.quantity = 1;
+      cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+</script>
+
+</body>
+</html>
+
+

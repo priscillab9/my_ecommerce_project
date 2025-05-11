@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glitterbug Jewelry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffc6e0;
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+    }
+
+    header button {
+      padding: 10px 20px;
+      background-color: #ff85b3;
+      border: none;
+      color: white;
+      font-size: 1em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 5px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .features a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .features div {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex: 1 1 200px;
+      max-width: 300px;
+      transition: transform 0.2s;
+    }
+
+    .features div:hover {
+      transform: scale(1.05);
+    }
+
+    .features img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .features span {
+      display: block;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #ffc6e0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    footer .social-links a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    footer .social-links a:hover {
+      color: #ff85b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Glitterbug Jewelry</h1>
+  <p>✨ Handmade with love, made to sparkle ✨</p>
+  <button onclick="logout()">Logout</button>
+</header>
+
+<section>
+  <h2>Explore Our Collections</h2>
+  <div class="features">
+    <a href="necklace.html">
+      <div>
+        <img src="https://starkle.in/cdn/shop/files/DualHeartDropNecklace.png?v=1726140049" alt="Necklaces">
+        <span>Necklaces</span>
+      </div>
+    </a>
+    <a href="rings.html">
+      <div>
+        <img src="https://www.zivar.in/cdn/shop/products/aasi-diamond-ring-433638.jpg?v=1691477702" alt="Rings">
+        <span>Rings</span>
+      </div>
+    </a>
+    <a href="bracelet.html">
+      <div>
+        <img src="https://starkle.in/cdn/shop/files/conn_brac2.png?v=1687867150" alt="Bracelets">
+        <span>Bracelets</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Glitterbug Jewelry | Contact: hello@glitterbug.com
+</footer>
+
+<script>
+  // Check login on page load
+  window.onload = function () {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (!loggedInUser) {
+      alert("Please log in to access the collections.");
+      window.location.href = 'index.html';
+    }
+  };
+
+  // Logout function
+  function logout() {
+    localStorage.removeItem('loggedInUser'); // Logout user
+    localStorage.removeItem('cart');         // Clear cart
+    alert("You have been logged out.");
+    window.location.href = 'index.html';     // Redirect to login
+  }
+</script>
+
+</body>
+</html>
+
