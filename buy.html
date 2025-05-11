@@ -167,7 +167,7 @@
     const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
     // Simulate payment success
-    const paymentSuccess = Math.random() > 0.1;  // 90% chance to succeed
+    const paymentSuccess = Math.random() > 0.1;
 
     if (paymentSuccess) {
       alert('Payment Successful!');
