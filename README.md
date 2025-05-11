@@ -9,7 +9,6 @@ This is a simple e-commerce web application built using HTML, CSS, and JavaScrip
 ## ✨ Features
 
 - 🛒 Add products to cart
-- 🗑️ Remove products from cart
 - 🧠 Stores cart data using browser's localStorage
 - 🎨 Responsive and clean UI using HTML & CSS
 
@@ -21,9 +20,8 @@ This is a simple e-commerce web application built using HTML, CSS, and JavaScrip
 - LocalStorage API
 - GitHub Pages (for deployment)
 
-## 📦 How to Run Locally
 
-1. Clone the repository:
+To clone the repository:
    ```bash
    git clone https://github.com/priscillab9/my-ecommerce_project.git
 
